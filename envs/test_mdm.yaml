@@ -1,0 +1,33 @@
+name: test_mdm_release_inpainting_10
+
+# directory
+base: ./output
+data_dir: ./dataset
+human_model_path: ./human_models
+test_model_path: ./output/train_mdm_release_2000_prob_0_lambda_1/model/last.pkl
+sampled_data_path: ./output/train_mdm_release_2000_prob_0_lambda_1/model/sampled_training_data.pkl
+
+# base setting
+action_dataset: BABEL
+model: MDM
+
+# machine config
+num_workers: 12
+batch_size: 256
+gen_batch_size: 10
+vis_num: 5
+test_num_rep: 4
+
+# sampling parameters
+S1_end_len: 4
+transition_rate: 0.1
+max_transition_len: 5
+S2_extra_train_frames: 3
+S2_extra_val_frames: 3
+
+# hyperparameters
+msg: test baseline
+
+# diffusion
+hist_frames: 5
+inter_frames: 0

@@ -1,0 +1,40 @@
+name: train_mdm_release_2000_prob_0_lambda_1_hist_5
+
+# directory
+base: ./output
+data_dir: ./dataset
+human_model_path: ./human_models
+
+# base setting
+action_dataset: BABEL
+model: MDM
+
+# machine config
+num_workers: 12
+batch_size: 64
+test_batch_size: 4
+train_lr: 0.0001
+kl_weight: 0.00001
+
+# training setting
+start_epoch: 0
+end_epoch: 2000
+print_epoch: 10
+vis_epoch: 400
+
+# sampling parameters
+S1_end_len: 4
+transition_rate: 0.1
+max_transition_len: 5
+S2_extra_train_frames: 3
+S2_extra_val_frames: 3
+
+# hyperparameters
+msg: train baseline
+
+# diffusion
+guidance_param: 2.5
+cond_mask_prob: 0
+lambda_tr: 1
+hist_frames: 5
+inter_frames: 0
